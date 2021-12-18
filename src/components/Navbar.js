@@ -1,11 +1,9 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import {withRouter} from "react-router-dom";
 
 
@@ -33,6 +31,7 @@ const Navbar = (props) => {
             </Typography>
             <Button variant="contained" onClick={() => handleMenuClick('/')}>Customers</Button>
             <Button variant="contained" onClick={() => handleMenuClick('/trainings')}>Trainings</Button>
+            <Button variant="contained" onClick={() => handleMenuClick('/calendar')}>Calendar</Button>
         </Toolbar>
         </Container>
     </AppBar>

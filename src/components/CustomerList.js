@@ -5,9 +5,11 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddCustomer from './AddCustomer'
 import EditCustomer from './EditCustomer'
-import Search, {searchCustomers} from './Search'
+import {searchCustomers} from './Search'
 import TextField from '@mui/material/TextField';
 import AddTraining from './AddTraining';
+import ExportCsv from './ExportCsv';
+
 
 
 export default function CustomerList() {
@@ -116,6 +118,7 @@ export default function CustomerList() {
 
     return (
         <div>
+            <ExportCsv customers={customers}/>
             <AddCustomer saveCustomer={saveCustomer}/>
             <TextField variant="standard" label="Search" value={q} onChange={(e) => setQ(e.target.value)} />
             <ReactTable data={searchCustomers(customers, q)} columns={columns} />

@@ -3,8 +3,6 @@ import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import AddCustomer from './AddCustomer'
-import EditCustomer from './EditCustomer'
 import {searchTrainings} from './Search'
 import TextField from '@mui/material/TextField';
 import {format, parseISO} from 'date-fns'
