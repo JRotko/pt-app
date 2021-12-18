@@ -7,6 +7,7 @@ import AddCustomer from './AddCustomer'
 import EditCustomer from './EditCustomer'
 import Search, {searchCustomers} from './Search'
 import TextField from '@mui/material/TextField';
+import AddTraining from './AddTraining';
 
 
 export default function CustomerList() {
@@ -52,6 +53,17 @@ export default function CustomerList() {
         .then(res => fetchData())
     }
 
+    const saveTraining = (training) => {
+        fetch('https://customerrest.herokuapp.com/api/trainings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(training)
+        })
+        .then(res => fetchData())
+    }
+
     
 
 
@@ -63,6 +75,13 @@ export default function CustomerList() {
         {
             Header: 'Last Name',
             accessor: 'lastname'
+        },
+        {
+            sortable : false,
+            filterable: false,
+            width: 100,
+            accessor: 'links[0].href',
+            Cell: row => <AddTraining saveTraining={saveTraining} customer={row.original}/>
         },
         {
             Header: 'Street Address',

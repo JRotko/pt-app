@@ -23,7 +23,15 @@ export default function TrainingList() {
         .then(data => setTrainings(data))
         .catch(err => console.error(err))
     }
-    
+
+    const deleteTraining = (link) => {
+        if (window.confirm('Are you sure?')) {
+            fetch(link, {method: 'DELETE'})
+            .then(res => fetchData())
+            .catch(err => console.error(err))
+        }
+    }
+
 
 
     const columns = [
@@ -69,6 +77,13 @@ export default function TrainingList() {
             Header: 'Duration',
             accessor: 'duration'
         },
+        {
+            sortable : false,
+            filterable: false,
+            width: 100,
+            accessor: 'id',
+            Cell: row => <IconButton aria-label="delete" color="error" onClick={() => deleteTraining("https://customerrest.herokuapp.com/api/trainings/" + row.value)}><DeleteIcon /></IconButton>
+        }
     ]
 
     return (
