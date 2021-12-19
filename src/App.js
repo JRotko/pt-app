@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import TrainingList from './components/TrainingList';
 import {BrowserRouter, Routes, Route, Switch} from "react-router-dom";
 import Calendar from './components/Calendar';
+import Chart from './components/Chart'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" component={CustomerList} />
           <Route path="/trainings" component={TrainingList} />
           <Route path ="/calendar" component={Calendar} />
+          <Route path ="/chart" component={Chart} />
         </Switch>
         
       </div>

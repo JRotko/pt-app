@@ -32,6 +32,7 @@ const Navbar = (props) => {
             <Button variant="contained" onClick={() => handleMenuClick('/')}>Customers</Button>
             <Button variant="contained" onClick={() => handleMenuClick('/trainings')}>Trainings</Button>
             <Button variant="contained" onClick={() => handleMenuClick('/calendar')}>Calendar</Button>
+            <Button variant="contained" onClick={() => handleMenuClick('/chart')}>Stats</Button>
         </Toolbar>
         </Container>
     </AppBar>
